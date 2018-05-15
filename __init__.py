@@ -11,24 +11,17 @@ class Example(QWidget):
         self.__height = height
         self.init_gui()
 
-
     def init_gui(self):
         desktop = QApplication.desktop()
         left = (desktop.width() - self.__width) // 2
-        top  = (desktop.height()- self.__height) // 2
+        top = (desktop.height() - self.__height) // 2
 
         self.setGeometry(left, top, self.__width, self.__height)
         self.setWindowTitle("效果")
         self.show()
 
-    @property
-    def getWidth(self):
-        print(self.__width)
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    ex = Example(400,200)
-    ex.getWidth
+    ex = Example(400, 200)
     sys.exit(app.exec())
